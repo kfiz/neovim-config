@@ -20,7 +20,7 @@
     showmode = false;
     ruler = true;
   };
-  globals.mapleader = " ";
+  globals.mapleader = ",";
   keymaps = [
     {
       key = "<BS>";
