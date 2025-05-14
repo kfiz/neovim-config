@@ -13,6 +13,13 @@
 
     web-devicons.enable = true;
 
+    comment = {
+      enable = true;
+      settings = {
+        opleader.line = "<ESC-;>";
+        toggler.line = "<ESC-;>";
+      };
+    };
     gitsigns = {
       enable = true;
       settings.signs = {

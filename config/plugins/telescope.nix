@@ -30,22 +30,23 @@
     };
   };
 
-  highlightOverride = let
-    custom = {
-      fg = "#93a1a1";
-      # fg = "#06303b";
-      # bg = "#859900";
-    };
+  highlightOverride =
+    let
+      custom = {
+        fg = "#93a1a1";
+        # fg = "#06303b";
+        # bg = "#859900";
+      };
     in
     {
-    TelescopeBorder.fg = "#93a1a1";
-    TelescopePromptNormal.fg = "#93a1a1";
-    TelescopePromptBorder.fg = "#93a1a1";
-    TelescopePromptPrefix.fg = "#dc322f";
-    TelescopePromptTitle = custom;
-    TelescopeResultsTitle = custom;
-    TelescopePreviewTitle = custom;
-  };
+      TelescopeBorder.fg = "#93a1a1";
+      TelescopePromptNormal.fg = "#93a1a1";
+      TelescopePromptBorder.fg = "#93a1a1";
+      TelescopePromptPrefix.fg = "#dc322f";
+      TelescopePromptTitle = custom;
+      TelescopeResultsTitle = custom;
+      TelescopePreviewTitle = custom;
+    };
 
   # Find TODOs
   keymaps = [

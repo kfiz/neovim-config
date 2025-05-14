@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "beacon": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1719294964,
+        "narHash": "sha256-x/79mRkwwT+sNrnf8QqocsaQtM+Rx6BUvVj5Nnv5JDY=",
+        "owner": "DanilaMihailov",
+        "repo": "beacon.nvim",
+        "rev": "098ff96c33874339d5e61656f3050dbd587d6bd5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DanilaMihailov",
+        "repo": "beacon.nvim",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -163,6 +179,7 @@
     },
     "root": {
       "inputs": {
+        "beacon": "beacon",
         "flake-parts": "flake-parts",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",

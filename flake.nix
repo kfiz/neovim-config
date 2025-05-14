@@ -11,6 +11,10 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    beacon = {
+      url = "github:DanilaMihailov/beacon.nvim";
+      flake = false;
+    };
   };
 
   outputs =
@@ -48,12 +52,10 @@
         { system, ... }:
         {
           # You can define actual Nixvim configurations here
-          nixvimConfigurations = {
-            default = inputs.nixvim.lib.evalNixvim {
-              inherit system;
-              modules = [
-                self.nixvimModules.default
-              ];
+          packages = {
+            default = inputs.nixvim.legacyPackages."${system}".makeNixvimWithModule {
+              module = self.nixvimModules.default;
+              extraSpecialArgs = { inherit inputs; };
             };
           };
           treefmt.programs.nixfmt.enable = true;
