@@ -16,8 +16,8 @@
     comment = {
       enable = true;
       settings = {
-        opleader.line = "<ESC-;>";
-        toggler.line = "<ESC-;>";
+        opleader.line = "<M-S-,>";
+        toggler.line = "<M-S-,>";
       };
     };
     gitsigns = {
