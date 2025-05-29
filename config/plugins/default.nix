@@ -20,6 +20,7 @@
         toggler.line = "<M-S-,>";
       };
     };
+
     gitsigns = {
       enable = true;
       settings.signs = {

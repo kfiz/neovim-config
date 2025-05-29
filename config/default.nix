@@ -59,23 +59,38 @@
     }
     {
       mode = "n";
+      key = "<CR>";
+      action = ":noh<CR><ESC>";
+    }
+    {
+      mode = "n";
+      key = "<leader><leader>";
+      options.silent = true;
+      action = ":lua require('beacon').highlight_cursor()<CR>";
+    }
+    {
+      mode = "n";
       key = "n";
-      action = "n:Beacon<CR>";
+      options.silent = true;
+      action = "n:lua require('beacon').highlight_cursor()<CR>";
     }
     {
       mode = "n";
       key = "N";
-      action = "N:Beacon<CR>";
+      options.silent = true;
+      action = "N:lua require('beacon').highlight_cursor()<CR>";
     }
     {
       mode = "n";
       key = "*";
-      action = "*:Beacon<CR>";
+      options.silent = true;
+      action = "*:lua require('beacon').highlight_cursor()<CR>";
     }
     {
       mode = "n";
       key = "#";
-      action = "#:Beacon<CR>";
+      options.silent = true;
+      action = "#:lua require('beacon').highlight_cursor()<CR>";
     }
   ];
 }
