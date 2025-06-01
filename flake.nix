@@ -1,7 +1,8 @@
 {
   description = "A nixvim configuration";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    systems.url = "github:nix-systems/default";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,15 +19,10 @@
   };
 
   outputs =
-    { self, flake-parts, ... }@inputs:
+    inputs:
+    with inputs;
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
-
+      systems = import systems;
       imports = [
         # Import nixvim's flake-parts module;
         # Adds `flake.nixvimModules` and `perSystem.nixvimConfigurations`

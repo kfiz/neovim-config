@@ -27,8 +27,8 @@
     number = true; # Show line
     relativenumber = true; # Show relative line numbers
     ruler = true;
-    showmode = false;
     shiftwidth = 2; # Tab width should be 2
+    showmode = false;
     smarttab = true;
     tabstop = 2;
   };

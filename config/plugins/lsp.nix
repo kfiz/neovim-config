@@ -1,4 +1,16 @@
 {
+  autoCmd = [
+    {
+      event = [ "BufWritePre" ];
+      pattern = [
+        "*.nix"
+        "*.rs"
+      ];
+      command = ''
+        lua vim.lsp.buf.format()
+      '';
+    }
+  ];
   plugins = {
     lsp-format = {
       enable = true;
