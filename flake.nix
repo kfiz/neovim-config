@@ -7,6 +7,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager = {
+      url = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-parts.url = "github:hercules-ci/flake-parts";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
@@ -26,8 +30,9 @@
       imports = [
         # Import nixvim's flake-parts module;
         # Adds `flake.nixvimModules` and `perSystem.nixvimConfigurations`
-        inputs.nixvim.flakeModules.default
-        inputs.treefmt-nix.flakeModule
+        nixvim.flakeModules.default
+        treefmt-nix.flakeModule
+        home-manager.flakeModules.home-manager
       ];
 
       nixvim = {
@@ -40,17 +45,24 @@
       };
 
       # You can define your reusable Nixvim modules here
-      flake.nixvimModules = {
-        default = ./config;
+      flake = {
+        nixvimModules = {
+          default = ./config/package;
+        };
+        homeModules.default = { pkgs, ... }: import ./config/home { inherit pkgs inputs; };
+        nixosModules.default = { pkgs, ... }: import ./config/nixos { inherit pkgs inputs; };
       };
 
       perSystem =
         { system, ... }:
         {
           # You can define actual Nixvim configurations here
-          packages = {
-            default = inputs.nixvim.legacyPackages."${system}".makeNixvimWithModule {
-              module = self.nixvimModules.default;
+          nixvimConfigurations = {
+            default = nixvim.lib.evalNixvim {
+              inherit system;
+              modules = [
+                self.nixvimModules.default
+              ];
               extraSpecialArgs = { inherit inputs; };
             };
           };

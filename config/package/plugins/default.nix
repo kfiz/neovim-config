@@ -6,6 +6,10 @@
     ./telescope.nix
     ./treesitter.nix
   ];
+  colorschemes.base16 = {
+    enable = true;
+    colorscheme = "solarized-dark";
+  };
 
   plugins = {
     # Lazy loading
