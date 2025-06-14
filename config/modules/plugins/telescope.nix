@@ -70,11 +70,12 @@
         key = "<leader>cf";
         action.__raw = ''
           function()
-            local path = vim.fn.input("Enter new directory path: ", "", "dir")
+            local path = vim.fn.input("Enter new directory path: ", vim.fn.getcwd(), "dir")
+            path = vim.fn.fnamemodify(path, ":p")  -- Normalize to absolute path
             if vim.fn.isdirectory(path) == 1 then
               vim.cmd("cd " .. vim.fn.fnameescape(path))
-              vim.notify("Changed directory to " .. path)
-              vim.cmd("Telescope find_files")
+              vim.notify("Changed directory to " .. path, vim.log.levels.INFO)
+              require("telescope.builtin").find_files({ cwd = path })
             else
               vim.notify("Invalid directory: " .. path, vim.log.levels.ERROR)
             end
