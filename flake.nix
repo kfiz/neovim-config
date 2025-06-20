@@ -49,18 +49,22 @@
         nixvimModules = {
           default = ./config/package;
         };
-        homeModules.default = { pkgs, ... }: {
-          imports = [
-            (import ./config/general.nix { inherit pkgs inputs;})
-            (import ./config/home { inherit inputs; })
-          ];
-        };
-        nixosModules.default = { pkgs, ... }: {
-          imports = [
-            (import ./config/general.nix { inherit pkgs inputs; })
-            (import ./config/nixos { inherit inputs; })
-          ];
-        };
+        homeModules.default =
+          { pkgs, ... }:
+          {
+            imports = [
+              (import ./config/general.nix { inherit pkgs inputs; })
+              (import ./config/home { inherit inputs; })
+            ];
+          };
+        nixosModules.default =
+          { pkgs, ... }:
+          {
+            imports = [
+              (import ./config/general.nix { inherit pkgs inputs; })
+              (import ./config/nixos { inherit inputs; })
+            ];
+          };
       };
 
       perSystem =
