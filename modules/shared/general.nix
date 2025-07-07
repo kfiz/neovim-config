@@ -45,6 +45,6 @@ let
     };
 in
 {
-  flake.modules.nixos.editors = mod;
-  flake.modules.homeManager.editors = mod;
+  flake.modules.nixos.default = mod;
+  flake.modules.homeManager.default = mod;
 }

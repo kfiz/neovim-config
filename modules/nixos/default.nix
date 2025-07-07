@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.editors = {
+  flake.modules.nixos.default = {
     imports = [
       inputs.nixvim.nixosModules.nixvim
     ];

@@ -58,7 +58,7 @@ let
   };
 in
 {
-  flake.modules.nixos.editors.programs.nixvim = mod;
-  flake.modules.homeManager.editors.programs.nixvim = mod;
+  flake.modules.nixos.default.programs.nixvim = mod;
+  flake.modules.homeManager.default.programs.nixvim = mod;
   flake.modules.generic.package = mod;
 }
