@@ -1,6 +1,7 @@
+{ inputs, ... }:
 let
   mod =
-    { pkgs, inputs, ... }:
+    { pkgs, ... }:
     {
       programs.nixvim = {
         enable = true;
@@ -10,7 +11,7 @@ let
           let
             beacon = pkgs.vimUtils.buildVimPlugin {
               name = "beacon.nvim";
-              src = inputs.myNeovim.inputs.beacon;
+              src = inputs.beacon;
             };
           in
           [ beacon ];
