@@ -6,10 +6,10 @@ let
     };
 
     plugins = {
-      # Lazy loading
-      lz-n.enable = true;
-
-      web-devicons.enable = true;
+      colorizer = {
+        enable = true;
+        settings.user_default_options.names = false;
+      };
 
       comment = {
         enable = true;
@@ -27,12 +27,10 @@ let
         };
       };
 
-      nvim-autopairs.enable = true;
+      # Lazy loading
+      lz-n.enable = true;
 
-      colorizer = {
-        enable = true;
-        settings.user_default_options.names = false;
-      };
+      nvim-autopairs.enable = true;
 
       oil = {
         enable = true;
@@ -50,6 +48,9 @@ let
           ];
         };
       };
+
+      web-devicons.enable = true;
+      which-key.enable = true;
     };
   };
 in
