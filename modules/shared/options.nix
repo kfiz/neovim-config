@@ -38,7 +38,7 @@ let
       termguicolors = true; # Enables 24-bit RGB color in the |TUI|
 
       # Folding
-      foldlevel = 99; # Folds with a level higher than this number will be closed
+      foldlevel = 5; # Folds with a level higher than this number will be closed
     };
   };
 in
