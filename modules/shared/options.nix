@@ -4,7 +4,7 @@ let
       # Use system clipboard
       register = "unnamedplus";
 
-      providers.wl-copy.enable = true;
+      providers.xsel.enable = true;
     };
 
     opts = {
