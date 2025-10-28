@@ -3,7 +3,10 @@ let
     plugins = {
       lsp-format = {
         enable = true;
-        lspServersToEnable = "all";
+        lspServersToEnable = [
+          "rust_analyzer"
+          "nil_ls"
+        ];
       };
 
       lsp = {
