@@ -4,6 +4,7 @@ let
       lsp-format = {
         enable = true;
         lspServersToEnable = [
+          "bashls"
           "rust_analyzer"
           "nil_ls"
         ];
@@ -30,6 +31,7 @@ let
           };
         };
         servers = {
+          bashls.enable = true;
           rust_analyzer = {
             enable = true;
             installCargo = false;
