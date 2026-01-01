@@ -10,7 +10,7 @@ let
           highlight.enable = true;
           indent.enable = true;
         };
-        folding = true;
+        folding.enable = true;
       };
 
       treesitter-refactor = {
@@ -24,7 +24,7 @@ let
         };
       };
 
-      hmts.enable = true;
+      # hmts.enable = true;
     };
   };
 in
