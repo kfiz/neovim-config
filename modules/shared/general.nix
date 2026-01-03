@@ -33,6 +33,7 @@ let
             enable = true;
             standalonePlugins = [
               "nvim-treesitter"
+              "hmts.nvim"
             ];
           };
           byteCompileLua.enable = true;
