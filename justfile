@@ -8,6 +8,9 @@ analyze: fmt-all
 check:
   nix flake check
 
+commit comment:
+ jj commit -m "{{comment}}"
+
 fix:
   statix fix
   deadnix --edit
