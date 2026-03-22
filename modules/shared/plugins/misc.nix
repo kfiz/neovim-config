@@ -31,6 +31,7 @@ let
       lz-n.enable = true;
 
       nvim-autopairs.enable = true;
+      nvim-surround.enable = true;
 
       oil = {
         enable = true;
