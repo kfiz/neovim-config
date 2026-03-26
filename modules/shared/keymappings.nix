@@ -24,7 +24,7 @@ let
               })
               {
                 "<BS>" = "dh";
-                "q" = ":q<CR>";
+                "qq" = ":q<CR>";
                 "<CR>" = ":noh<CR><ESC>";
                 "<leader><leader>" = ":lua require('beacon').highlight_cursor()<CR>";
                 "n" = "n:lua require('beacon').highlight_cursor()<CR>";
