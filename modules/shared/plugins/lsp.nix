@@ -26,6 +26,7 @@ let
             };
         servers = {
           bashls.enable = true;
+          yamlls.enable = true;
           rust_analyzer = {
             enable = true;
             config.settings."rust-analyzer" = {
@@ -40,6 +41,7 @@ let
           enable = true;
           lspServersToEnable = [
             "bashls"
+            "yamlls"
             "rust_analyzer"
             "nil_ls"
           ];
